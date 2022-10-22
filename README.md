@@ -8,4 +8,4 @@
 - [ ] Store mothly bill
 - [ ] Data backup/restore option
 - [ ] Export monthly report (image of bill)
-- [ ] Multiple language support (English, Hindi, Gujarati, Tamil)
+- [x] Multiple language support (English, Hindi, Gujarati, Tamil)

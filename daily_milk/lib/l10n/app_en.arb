@@ -1,0 +1,11 @@
+{
+    "title": "Daily Milk",
+    "@helloWorld": {
+      "description": "The conventional newborn programmer greeting"
+    },
+    "home": "Home",
+    "calendar": "Calendar",
+    "calculate": "Calculate",
+    "receipt": "Receipt",
+    "settings": "Settings"
+}

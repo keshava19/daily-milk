@@ -1,4 +1,4 @@
-import 'package:daily_milk/home_page.dart';
+import 'package:daily_milk/landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -14,7 +14,7 @@ class DailyMilk extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+      home: const LandingPage(),
     );
   }
 }

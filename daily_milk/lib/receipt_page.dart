@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ReceiptPage extends StatelessWidget {
+  const ReceiptPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: const Text('Home Page'),
+      child: const Text('Receipt Page'),
     );
   }
 }

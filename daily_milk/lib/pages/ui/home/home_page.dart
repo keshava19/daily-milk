@@ -1,5 +1,7 @@
+import 'package:daily_milk/model/milk_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hive/hive.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,19 +42,29 @@ class _HomePageState extends State<HomePage> {
           ),
           const SizedBox(height: 16),
           ElevatedButton(
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                      content: Text(
-                          AppLocalizations.of(context)!.milkSubmitSuccess)),
-                );
-              }
-            },
+            onPressed: onSubmit,
             child: Text(AppLocalizations.of(context)!.milkSubmit),
           ),
         ],
       ),
     );
+  }
+
+  void onSubmit() async {
+    if (formKey.currentState!.validate()) {
+      var box = await Hive.openBox('hive_box');
+      var milkEntry = MilkModel(
+        date: DateTime.now().toUtc().toString(),
+        // TODO: Have to get this at the first start of app and get from settings always.
+        price: 45,
+        quantity: 1,
+      );
+      box.add(milkEntry);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text(AppLocalizations.of(context)!.milkSubmitSuccess)),
+      );
+    }
   }
 }

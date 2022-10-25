@@ -4,5 +4,11 @@
     "calendar": "Calendar",
     "calculate": "Calculate",
     "receipt": "Receipt",
-    "settings": "Settings"
+    "settings": "Settings",
+    "required": "Required",
+    "milkQuantity": "1",
+    "milkQuantitySymbol": "ltr",
+    "milkLabel": "Milk Quantity",
+    "milkSubmit": "Add Entry",
+    "milkSubmitSuccess": "Milk entry added"
 }

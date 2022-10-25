@@ -7,7 +7,12 @@ class CalendarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: const Text('Calendar Page'),
+      child: CalendarDatePicker(
+        initialDate: DateTime.now(),
+        firstDate: DateTime(1997, 2, 27),
+        lastDate: DateTime(2097, 11, 19),
+        onDateChanged: (_) {},
+      ),
     );
   }
 }

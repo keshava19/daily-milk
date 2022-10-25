@@ -1,8 +1,8 @@
-import 'package:daily_milk/calculate_page.dart';
-import 'package:daily_milk/calendar_page.dart';
-import 'package:daily_milk/home_page.dart';
-import 'package:daily_milk/receipt_page.dart';
-import 'package:daily_milk/settings_page.dart';
+import 'package:daily_milk/pages/ui/calculate/calculate_page.dart';
+import 'package:daily_milk/pages/ui/calendar/calendar_page.dart';
+import 'package:daily_milk/pages/ui/home/home_page.dart';
+import 'package:daily_milk/pages/ui/receipt/receipt_page.dart';
+import 'package:daily_milk/pages/ui/settings/settings_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

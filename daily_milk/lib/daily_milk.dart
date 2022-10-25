@@ -1,4 +1,4 @@
-import 'package:daily_milk/landing_page.dart';
+import 'package:daily_milk/pages/ui/landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

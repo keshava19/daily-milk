@@ -1,4 +1,5 @@
 import 'package:daily_milk/model/milk_model.dart';
+import 'package:daily_milk/utils/hive_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hive/hive.dart';
@@ -12,6 +13,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final formKey = GlobalKey<FormState>();
+  var quantityCtr = TextEditingController();
+  late double price;
+
+  @override
+  void initState() {
+    defaultValues();
+    super.initState();
+  }
+
+  void defaultValues() async {
+    var box = await Hive.openBox(HiveConstants.boxName);
+    price = box.get(HiveConstants.defaultPrice, defaultValue: 45.0);
+    double quantity = box.get(HiveConstants.defaultQuantity, defaultValue: 1.0);
+    quantityCtr.text = quantity.toString();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +48,7 @@ class _HomePageState extends State<HomePage> {
                     : null;
               }),
               keyboardType: TextInputType.number,
+              controller: quantityCtr,
               decoration: InputDecoration(
                 suffixText: AppLocalizations.of(context)!.milkQuantitySymbol,
                 hintText: AppLocalizations.of(context)!.milkQuantity,
@@ -52,12 +69,11 @@ class _HomePageState extends State<HomePage> {
 
   void onSubmit() async {
     if (formKey.currentState!.validate()) {
-      var box = await Hive.openBox('hive_box');
+      var box = await Hive.openBox(HiveConstants.boxName);
       var milkEntry = MilkModel(
         date: DateTime.now().toUtc().toString(),
-        // TODO: Have to get this at the first start of app and get from settings always.
-        price: 45,
-        quantity: 1,
+        price: price,
+        quantity: double.parse(quantityCtr.text),
       );
       box.add(milkEntry);
       if (!mounted) return;

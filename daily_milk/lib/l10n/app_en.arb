@@ -13,5 +13,10 @@
     "milkQuantitySymbol": "ltr",
     "milkLabel": "Milk Quantity",
     "milkSubmit": "Add Entry",
-    "milkSubmitSuccess": "Milk entry added"
+    "milkSubmitSuccess": "Milk entry added",
+    "defaultQuantity": "Default Quantity",
+    "defaultPrice": "Default Price",
+    "pricePerLitre": "₹‎/ltr",
+    "save": "Save",
+    "settingsSubmitSuccess": "Data updated successfully"
 }
